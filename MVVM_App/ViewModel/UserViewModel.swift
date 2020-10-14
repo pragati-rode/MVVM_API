@@ -25,10 +25,7 @@ class UserViewModel {
                             
                             self.vc?.tableView.reloadData()
                         }
-                        //                        for modelUser in userResponse {
-                        //                            self.arrUsers.append(modelUser)
-                        //                        }
-                        //                        print(self.arrUsers)
+                      
                     } catch let err{
                         print(err.localizedDescription)
                     }
@@ -44,7 +41,6 @@ class UserViewModel {
                 {
                     do {
                         let userResponse = try JSONDecoder().decode([UserModel].self, from: data)
-                        //print(userResponse)
                         self.arrUsers.append(contentsOf: userResponse)
                         DispatchQueue.main.async {
                             
